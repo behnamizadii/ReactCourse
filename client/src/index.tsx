@@ -6,5 +6,6 @@ import './index.css'
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-)
+  </React.StrictMode>, 
+  //a feature of strict mode is, it makes two reuqests in developmetn mode to any api resources for verification purposes
+);
