@@ -1,6 +1,11 @@
-import { AppBar, Toolbar, Typography } from "@mui/material";
+import { AppBar, Switch, Toolbar, Typography } from "@mui/material";
 
-export default function Header() {
+interface Props{
+  darkMode: boolean;
+  handleChange: ()=> void;
+}
+
+export default function Header({darkMode, handleChange}: Props) {
   return(
     <AppBar position='static' sx={{mb: 4}}> 
     {/* // check the app bar api in material ui for more on what is sx and mb */}
@@ -8,6 +13,9 @@ export default function Header() {
         <Typography variant="h6">
           ReStore
         </Typography>
+        <Switch 
+        checked={darkMode}
+        onChange={handleChange} />
       </Toolbar>
     </AppBar>
   )

@@ -1,18 +1,30 @@
 import Catalog from "../../features/catalog/Catalog"
-import { CssBaseline, Container } from "@mui/material"
+import { CssBaseline, Container, createTheme, ThemeProvider } from "@mui/material"
 import Header from "./Header"
+import { useState } from "react"
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+  const paletteType = darkMode ? 'dark' : 'light';
+  const theme = createTheme({
+    palette: {
+      mode: paletteType
+    }
+  })
+
+  function handleChange(){
+    setDarkMode(!darkMode);
+  }
+
   return (
-    <div>
+    <ThemeProvider theme={theme}>
       {/* this helps the header to be edge to edge without any margin or paddings */}
       <CssBaseline />  
-      <Header />
+      <Header darkMode={darkMode} handleChange={handleChange} />
       <Container>
         <Catalog />
       </Container>
-      
-    </div>
+    </ThemeProvider>
   )
 }
 
