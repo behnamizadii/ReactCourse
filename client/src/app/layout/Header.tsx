@@ -1,5 +1,14 @@
 import { AppBar, Switch, Toolbar, Typography } from "@mui/material";
 
+const midlinks = [
+  {title: 'catalog', path: '/catalog'},
+  {title}
+]
+
+// https://www.udemy.com/course/learn-to-build-an-e-commerce-store-with-dotnet-react-redux/learn/lecture/28964944#overview
+// 1:44
+// course
+
 interface Props{
   darkMode: boolean;
   handleChange: ()=> void;
